@@ -4,7 +4,7 @@ import { MotionSection } from '../components/LayoutUtils';
 import { COMPANY_INFO } from '../constants';
 import { ImageWithFallback } from '../components/figma/ImageWithFallback';
 
-export const Hero: React.FC<{ onCtaClick: (page: string) => void }> = ({ onCtaClick }) => {
+export const Hero: React.FC = () => {
   return (
     <div className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-[#F6F3EC]">
       {/* Background patterns */}

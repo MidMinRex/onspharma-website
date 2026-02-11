@@ -20,7 +20,7 @@ export const COMPANY_INFO = {
   tagline: "Bridging the gap in healthcare through excellence in distribution.",
   contact: {
     address: "Neeraj Nagar 2 ,Agra, Uttar Pradesh, India",
-    email: "info@onspharma.com",
+    email: "onspharma2009@gmail.com",
     phone: "+91-9927094924",
   },
   disclaimer: "For registered medical practitioners and pharmacists only.",

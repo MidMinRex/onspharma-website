@@ -31,6 +31,6 @@ export const SectionHeader: React.FC<{ title: string; subtitle?: string; light?:
         {subtitle}
       </p>
     )}
-    <div className={`h-1 w-20 mt-6 ${light ? 'bg-[#00A4BD]' : 'bg-[#00A4BD]'}`}></div>
+    <div className="h-1 w-20 mt-6 bg-[#00A4BD]"></div>
   </div>
 );
