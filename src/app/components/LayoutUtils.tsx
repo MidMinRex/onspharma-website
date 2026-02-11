@@ -23,14 +23,14 @@ export const MotionSection: React.FC<MotionSectionProps> = ({ children, classNam
 
 export const SectionHeader: React.FC<{ title: string; subtitle?: string; light?: boolean }> = ({ title, subtitle, light }) => (
   <div className="mb-12">
-    <h2 className={`text-3xl font-light tracking-tight ${light ? 'text-white' : 'text-slate-900'} mb-4`}>
+    <h2 className={`text-3xl font-light tracking-tight ${light ? 'text-white' : 'text-[#002D62]'} mb-4`}>
       {title}
     </h2>
     {subtitle && (
-      <p className={`max-w-2xl text-lg ${light ? 'text-blue-100' : 'text-slate-600'} font-light leading-relaxed`}>
+      <p className={`max-w-2xl text-lg ${light ? 'text-[#E6EEFF]' : 'text-[#002D62]/75'} font-light leading-relaxed`}>
         {subtitle}
       </p>
     )}
-    <div className={`h-1 w-20 mt-6 ${light ? 'bg-blue-400' : 'bg-blue-600'}`}></div>
+    <div className={`h-1 w-20 mt-6 ${light ? 'bg-[#00A4BD]' : 'bg-[#00A4BD]'}`}></div>
   </div>
 );

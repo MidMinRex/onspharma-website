@@ -45,7 +45,7 @@ export const TiltCard: React.FC<TiltCardProps> = ({ children, className = "", on
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       onClick={onClick}
-      className={`relative group ${className}`}
+      className={`relative ${className}`}
     >
       <div 
         className={`h-full w-full ${styles.tilted}`}

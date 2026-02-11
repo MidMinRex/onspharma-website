@@ -5,7 +5,7 @@ import logoIcon from '../assets/logo-icon.png';
 
 export const Footer: React.FC<{ setActivePage: (page: string, productId?: string) => void }> = ({ setActivePage }) => {
   return (
-    <footer className="bg-slate-900 text-slate-300 pt-20 pb-10">
+    <footer className="bg-[#0B1A33] text-[#C7D2E5] pt-20 pb-10">
       <div className="container mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
@@ -18,7 +18,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
               />
               <span className="text-white font-black text-xl">{COMPANY_INFO.name}</span>
             </div>
-            <p className="text-sm leading-relaxed mb-6 font-light">
+            <p className="text-sm leading-relaxed mb-6 font-light text-[#C7D2E5]">
               Trusted pharmaceutical wholesale and distribution partner based in Agra, serving the healthcare community since {COMPANY_INFO.established}.
             </p>
             <div className="flex gap-4">
@@ -28,7 +28,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
 
           <div>
             <h4 className="text-white font-semibold mb-6">Quick Links</h4>
-            <ul className="space-y-4 text-base">
+            <ul className="space-y-4 text-base text-[#C7D2E5]">
               <li>
                 <a
                   href="/"
@@ -36,7 +36,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
                     event.preventDefault();
                     setActivePage('home');
                   }}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-[#00A4BD] transition-colors"
                 >
                   Home
                 </a>
@@ -48,7 +48,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
                     event.preventDefault();
                     setActivePage('about');
                   }}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-[#00A4BD] transition-colors"
                 >
                   About Us
                 </a>
@@ -60,7 +60,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
                     event.preventDefault();
                     setActivePage('products');
                   }}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-[#00A4BD] transition-colors"
                 >
                   Our Products
                 </a>
@@ -72,7 +72,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
                     event.preventDefault();
                     setActivePage('contact');
                   }}
-                  className="hover:text-blue-400 transition-colors"
+                  className="hover:text-[#00A4BD] transition-colors"
                 >
                   Contact Us
                 </a>
@@ -82,7 +82,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
 
           <div>
             <h4 className="text-white font-semibold mb-6">Our Products</h4>
-            <ul className="space-y-4 text-base font-light">
+            <ul className="space-y-4 text-base font-light text-[#C7D2E5]">
               {PRODUCTS.map((product) => (
                 <li key={product.id}>
                   <a
@@ -91,7 +91,7 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
                       event.preventDefault();
                       setActivePage('product-detail', product.id);
                     }}
-                    className="hover:text-blue-400 cursor-pointer transition-colors"
+                    className="hover:text-[#00A4BD] cursor-pointer transition-colors"
                   >
                     {product.name}
                   </a>
@@ -102,28 +102,28 @@ export const Footer: React.FC<{ setActivePage: (page: string, productId?: string
 
           <div>
             <h4 className="text-white font-semibold mb-6">Contact Details</h4>
-            <ul className="space-y-4 text-base font-light">
+            <ul className="space-y-4 text-base font-light text-[#C7D2E5]">
               <li className="flex items-start gap-3">
-                <MapPin size={18} className="text-blue-500 shrink-0" />
+                <MapPin size={18} className="text-[#00A4BD] shrink-0" />
                 <span>{COMPANY_INFO.contact.address}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Mail size={18} className="text-blue-500 shrink-0" />
+                <Mail size={18} className="text-[#00A4BD] shrink-0" />
                 <span>{COMPANY_INFO.contact.email}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Phone size={18} className="text-blue-500 shrink-0" />
+                <Phone size={18} className="text-[#00A4BD] shrink-0" />
                 <span>{COMPANY_INFO.contact.phone}</span>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
-          <div className="text-[11px] uppercase tracking-widest font-medium text-slate-500">
+        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="text-[11px] uppercase tracking-widest font-medium text-[#C7D2E5]">
             (c) {new Date().getFullYear()} {COMPANY_INFO.name}. All Rights Reserved.
           </div>
-          <div className="text-[10px] text-slate-500 max-w-md text-center md:text-right italic">
+          <div className="text-[10px] text-[#C7D2E5] max-w-md text-center md:text-right italic">
             Disclaimer: {COMPANY_INFO.disclaimer} This website does not sell products directly to consumers.
           </div>
         </div>

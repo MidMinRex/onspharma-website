@@ -7,7 +7,8 @@ import { Products } from './pages/Products';
 import { ProductDetail } from './pages/ProductDetail';
 import { Contact } from './pages/Contact';
 import { Toaster } from 'sonner';
-import { COMPANY_INFO, PRODUCTS, PRODUCT_PATH_PREFIX, SITE_URL, getProductPath } from './constants';
+import { COMPANY_INFO, PRODUCTS, PRODUCT_PATH_PREFIX, SITE_URL, getProductPath, type Product } from './constants';
+import logoIcon from './assets/logo-icon.png';
 
 const PRODUCT_IDS = new Set(PRODUCTS.map((product) => product.id));
 
@@ -90,6 +91,75 @@ const setCanonicalUrl = (url: string) => {
   link.setAttribute('href', url);
 };
 
+const toAbsoluteUrl = (url: string) => {
+  if (!url) return SITE_URL;
+  if (url.startsWith('http://') || url.startsWith('https://')) return url;
+  if (url.startsWith('/')) return `${SITE_URL}${url}`;
+  return `${SITE_URL}/${url}`;
+};
+
+const setJsonLd = (id: string, data: Record<string, unknown> | null) => {
+  let script = document.getElementById(id) as HTMLScriptElement | null;
+  if (!data) {
+    if (script) {
+      script.remove();
+    }
+    return;
+  }
+  if (!script) {
+    script = document.createElement('script');
+    script.setAttribute('type', 'application/ld+json');
+    script.id = id;
+    document.head.appendChild(script);
+  }
+  script.text = JSON.stringify(data);
+};
+
+const getOrganizationSchema = () => ({
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: COMPANY_INFO.name,
+  url: SITE_URL,
+  logo: toAbsoluteUrl(logoIcon),
+  description: COMPANY_INFO.tagline,
+  address: COMPANY_INFO.contact.address,
+  email: COMPANY_INFO.contact.email,
+  telephone: COMPANY_INFO.contact.phone,
+  foundingDate: String(COMPANY_INFO.established),
+});
+
+const getProductSchema = (product: Product, canonicalUrl: string) => {
+  const dosageForm = product.composition?.[0];
+  const schema: Record<string, unknown> = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: product.name,
+    description: product.description,
+    brand: {
+      '@type': 'Brand',
+      name: COMPANY_INFO.name,
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: COMPANY_INFO.name,
+    },
+    category: product.category,
+    url: canonicalUrl,
+  };
+
+  if (dosageForm) {
+    schema.additionalProperty = [
+      {
+        '@type': 'PropertyValue',
+        name: 'Dosage Form',
+        value: dosageForm,
+      },
+    ];
+  }
+
+  return schema;
+};
+
 const getPageMeta = (page: string, productId: string) => {
   if (page === 'product-detail') {
     const product = PRODUCTS.find((item) => item.id === productId);
@@ -120,7 +190,7 @@ const getPageMeta = (page: string, productId: string) => {
     default:
       return {
         title: `${COMPANY_INFO.name} | Pharmaceutical Distribution`,
-        description: COMPANY_INFO.tagline,
+        description: `${COMPANY_INFO.name} is a pharmaceutical wholesale and distribution company based in ${COMPANY_INFO.location}. ${COMPANY_INFO.tagline}`,
       };
   }
 };
@@ -167,9 +237,21 @@ export default function App() {
     setMetaTag('og:description', buildMetaDescription(description), 'property');
     setMetaTag('og:type', activePage === 'product-detail' ? 'product' : 'website', 'property');
     setMetaTag('og:url', canonicalUrl, 'property');
+    setMetaTag('og:site_name', COMPANY_INFO.name, 'property');
     setMetaTag('twitter:card', 'summary');
     setMetaTag('twitter:title', title);
     setMetaTag('twitter:description', buildMetaDescription(description));
+
+    const product = activePage === 'product-detail'
+      ? PRODUCTS.find((item) => item.id === selectedProductId)
+      : undefined;
+
+    setJsonLd('ons-org-schema', getOrganizationSchema());
+    if (product) {
+      setJsonLd('ons-product-schema', getProductSchema(product, canonicalUrl));
+    } else {
+      setJsonLd('ons-product-schema', null);
+    }
   }, [activePage, selectedProductId]);
 
   const handleSetActivePage = (page: string, productId?: string) => {
@@ -198,10 +280,12 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white font-sans selection:bg-blue-100 selection:text-blue-900 ui-enhanced">
+    <div className="min-h-screen bg-[#F6F3EC] font-sans selection:bg-[#00A4BD]/20 selection:text-[#002D62] ui-enhanced">
       <Navbar activePage={activePage} setActivePage={handleSetActivePage} />
 
-      {renderPage()}
+      <div className="pt-4">
+        {renderPage()}
+      </div>
 
       <Footer setActivePage={handleSetActivePage} />
 

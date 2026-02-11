@@ -1,16 +1,16 @@
 /* UI Enhancements (color theme only, scoped by .ui-enhanced) */
 
 :where(.ui-enhanced) {
-  --ui-blue-900: #061a3a;
-  --ui-blue-800: #0a2b60;
-  --ui-blue-700: #0b3270;
-  --ui-blue-600: #0c3f99;
-  --ui-blue-500: #1f7fd1;
-  --ui-blue-400: #4bb8ff;
-  --ui-blue-300: #8bcfff;
-  --ui-blue-200: #bcd8ff;
-  --ui-blue-100: #dbeeff;
-  --ui-blue-50: #f1f8ff;
+  --ui-blue-900: #002d62;
+  --ui-blue-800: #03356f;
+  --ui-blue-700: #04407c;
+  --ui-blue-600: #002d62;
+  --ui-blue-500: #00a4bd;
+  --ui-blue-400: #33b9cc;
+  --ui-blue-300: #66cfe0;
+  --ui-blue-200: #99e4ef;
+  --ui-blue-100: #ccf0f6;
+  --ui-blue-50: #eaf8fb;
 }
 
 /* Text colors */
@@ -37,28 +37,28 @@
 :where(.ui-enhanced) .bg-blue-50 { background-color: var(--ui-blue-50) !important; }
 
 /* Border colors */
-:where(.ui-enhanced) .border-blue-50 { border-color: #e3f0ff !important; }
-:where(.ui-enhanced) .border-blue-100 { border-color: #d2e6ff !important; }
-:where(.ui-enhanced) .border-blue-200 { border-color: #bedcff !important; }
-:where(.ui-enhanced) .border-blue-300 { border-color: #9cc7ff !important; }
+:where(.ui-enhanced) .border-blue-50 { border-color: #dff2f6 !important; }
+:where(.ui-enhanced) .border-blue-100 { border-color: #c7e9f0 !important; }
+:where(.ui-enhanced) .border-blue-200 { border-color: #a8dbe6 !important; }
+:where(.ui-enhanced) .border-blue-300 { border-color: #7ec8d6 !important; }
 :where(.ui-enhanced) .border-blue-400 { border-color: var(--ui-blue-400) !important; }
 :where(.ui-enhanced) .border-blue-500 { border-color: var(--ui-blue-500) !important; }
 :where(.ui-enhanced) .border-blue-600 { border-color: var(--ui-blue-600) !important; }
 
 /* Opacity variants used in the UI */
-:where(.ui-enhanced) .bg-blue-600\/20 { background-color: rgb(12 63 153 / 0.2) !important; }
-:where(.ui-enhanced) .bg-blue-600\/10 { background-color: rgb(12 63 153 / 0.1) !important; }
-:where(.ui-enhanced) .bg-blue-600\/6 { background-color: rgb(12 63 153 / 0.06) !important; }
-:where(.ui-enhanced) .bg-blue-900\/10 { background-color: rgb(6 26 58 / 0.1) !important; }
+:where(.ui-enhanced) .bg-blue-600\/20 { background-color: rgb(0 45 98 / 0.2) !important; }
+:where(.ui-enhanced) .bg-blue-600\/10 { background-color: rgb(0 45 98 / 0.1) !important; }
+:where(.ui-enhanced) .bg-blue-600\/6 { background-color: rgb(0 45 98 / 0.06) !important; }
+:where(.ui-enhanced) .bg-blue-900\/10 { background-color: rgb(0 45 98 / 0.1) !important; }
 
 /* Shadow color tint overrides */
-:where(.ui-enhanced) .shadow-blue-600\/20 { --tw-shadow-color: rgb(12 63 153 / 0.2) !important; }
-:where(.ui-enhanced) .shadow-blue-600\/5 { --tw-shadow-color: rgb(12 63 153 / 0.05) !important; }
-:where(.ui-enhanced) .shadow-blue-900\/10 { --tw-shadow-color: rgb(6 26 58 / 0.1) !important; }
+:where(.ui-enhanced) .shadow-blue-600\/20 { --tw-shadow-color: rgb(0 45 98 / 0.2) !important; }
+:where(.ui-enhanced) .shadow-blue-600\/5 { --tw-shadow-color: rgb(0 45 98 / 0.05) !important; }
+:where(.ui-enhanced) .shadow-blue-900\/10 { --tw-shadow-color: rgb(0 45 98 / 0.1) !important; }
 
 /* Readability improvements (scoped) */
 :where(.ui-enhanced) {
-  --ui-container-max: 1280px;
+  --ui-container-max: 80rem;
   --ui-text-xs: 0.85rem;
   --ui-text-sm: 0.98rem;
   --ui-text-base: 1.06rem;
@@ -70,7 +70,7 @@
 
 /* Consistent container width to prevent excessive whitespace on zoom-out */
 :where(.ui-enhanced) .container {
-  max-width: clamp(960px, 86vw, var(--ui-container-max));
+  max-width: clamp(60rem, 86vw, var(--ui-container-max));
   width: min(100% - 2.5rem, var(--ui-container-max));
   margin-left: auto;
   margin-right: auto;
@@ -119,7 +119,6 @@
   font-weight: 500;
   line-height: var(--ui-leading-body);
   letter-spacing: var(--ui-letter-body);
-  color: #1f2a37;
 }
 
 :where(.ui-enhanced) p {
@@ -140,15 +139,15 @@
 
 /* Darken secondary text on light backgrounds for WCAG contrast */
 :where(.ui-enhanced) :is(.bg-white, .bg-slate-50, .bg-slate-100) .text-slate-400 {
-  color: #3a475a !important;
+  color: rgba(0, 45, 98, 0.62) !important;
 }
 
 :where(.ui-enhanced) :is(.bg-white, .bg-slate-50, .bg-slate-100) .text-slate-500 {
-  color: #2f3b4d !important;
+  color: rgba(0, 45, 98, 0.7) !important;
 }
 
 :where(.ui-enhanced) :is(.bg-white, .bg-slate-50, .bg-slate-100) .text-slate-600 {
-  color: #243244 !important;
+  color: rgba(0, 45, 98, 0.78) !important;
 }
 
 :where(.ui-enhanced) .text-slate-500.font-light,
@@ -160,44 +159,44 @@
 /* Dark background readability */
 :where(.ui-enhanced) footer.bg-slate-900,
 :where(.ui-enhanced) .bg-slate-900 {
-  color: #e6edf7;
+  color: #c7d2e5;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-slate-500,
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-slate-400 {
-  color: #c9d6e6 !important;
+  color: #c7d2e5 !important;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-slate-300 {
-  color: #e1e9f4 !important;
+  color: #c7d2e5 !important;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-white {
-  color: #f8fbff !important;
+  color: #ffffff !important;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) a {
-  color: #e1ecff;
+  color: #c7d2e5;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) a:hover {
-  color: #ffffff;
+  color: #00a4bd;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) h4,
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) h3,
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) h2 {
-  color: #f4f8ff;
+  color: #ffffff;
   font-weight: 600;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-blue-500,
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .text-blue-600 {
-  color: #6db6ff !important;
+  color: #00a4bd !important;
 }
 
 :where(.ui-enhanced) :is(footer.bg-slate-900, .bg-slate-900) .border-slate-800 {
-  border-color: rgba(255, 255, 255, 0.12) !important;
+  border-color: rgba(199, 210, 229, 0.2) !important;
 }
 
 /* Footer "Our Products" highlight */
@@ -227,26 +226,54 @@
   height: 6px;
   margin-right: 10px;
   border-radius: 999px;
-  background: #6db6ff;
+  background: #00a4bd;
   vertical-align: middle;
 }
 
 :where(.ui-enhanced) footer.bg-slate-900 .text-sm.leading-relaxed {
-  color: #d6e3f5 !important;
+  color: #c7d2e5 !important;
 }
 
 :where(.ui-enhanced) footer.bg-slate-900 .text-base.font-light {
-  color: #e1ecff !important;
+  color: #c7d2e5 !important;
   font-weight: 600;
 }
 
 /* Footer contact details: ensure visibility matches other footer text */
 :where(.ui-enhanced) footer.bg-slate-900 li span {
-  color: #e1ecff !important;
+  color: #c7d2e5 !important;
   font-weight: 600;
 }
 
 :where(.ui-enhanced) footer.bg-slate-900 li a {
-  color: #e1ecff !important;
+  color: #c7d2e5 !important;
   font-weight: 600;
+}
+
+/* Product card hover: scoped to the hovered card only */
+:where(.ui-enhanced) .product-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+:where(.ui-enhanced) .product-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 35px rgba(0, 45, 98, 0.12);
+  border-color: rgba(0, 45, 98, 0.2);
+}
+
+:where(.ui-enhanced) .product-card__image {
+  transition: transform 0.6s ease;
+}
+
+:where(.ui-enhanced) .product-card:hover .product-card__image {
+  transform: scale(1.04);
+}
+
+:where(.ui-enhanced) .product-card__cta {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+:where(.ui-enhanced) .product-card:hover .product-card__cta {
+  transform: translateX(0.25rem);
+  color: var(--ui-blue-500);
 }

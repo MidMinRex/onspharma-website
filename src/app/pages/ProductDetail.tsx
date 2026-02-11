@@ -71,7 +71,7 @@ export const ProductDetail: React.FC<{
   }, [isLightboxOpen, images.length]);
 
   return (
-    <div className="pt-32 pb-24 min-h-screen bg-white">
+    <div className="pt-32 pb-24 min-h-screen bg-[#F6F3EC]">
       <div className="container mx-auto px-6">
         <MotionSection>
           <a
@@ -80,7 +80,7 @@ export const ProductDetail: React.FC<{
               event.preventDefault();
               setActivePage('products');
             }}
-            className="inline-flex items-center gap-2 text-slate-600 hover:text-blue-600 font-semibold mb-12 transition-colors group rounded-full px-3 py-2 -ml-3 touch-manipulation cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
+            className="inline-flex items-center gap-2 text-[#002D62]/70 hover:text-[#00A4BD] font-semibold mb-12 transition-colors group rounded-full px-3 py-2 -ml-3 touch-manipulation cursor-pointer select-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00A4BD] focus-visible:ring-offset-2"
             aria-label="Back to Portfolio"
           >
             <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" /> Back to Portfolio
@@ -111,8 +111,8 @@ export const ProductDetail: React.FC<{
                   onMouseEnter={() => setSelectedImageIndex(i)}
                   onFocus={() => setSelectedImageIndex(i)}
                   onClick={() => openLightbox(i)}
-                  className={`aspect-square rounded-2xl bg-slate-50 overflow-hidden border-2 cursor-pointer transition-all ${
-                    selectedImageIndex === i ? 'border-blue-600' : 'border-slate-100 hover:border-blue-300'
+                  className={`aspect-square rounded-2xl bg-white overflow-hidden border-2 cursor-pointer transition-all ${
+                    selectedImageIndex === i ? 'border-[#00A4BD]' : 'border-[#002D62]/10 hover:border-[#00A4BD]/50'
                   }`}
                   aria-label={`View ${product.name} image ${i + 1}`}
                 >
@@ -127,45 +127,45 @@ export const ProductDetail: React.FC<{
           </MotionSection>
 
           <MotionSection delay={0.2}>
-            <div className="inline-block bg-blue-50 text-blue-600 px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
+            <div className="inline-block bg-[#00A4BD]/10 text-[#00A4BD] px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
               {product.category}
             </div>
-            <h1 className="text-5xl md:text-6xl font-light text-slate-900 mb-8 leading-tight">
+            <h1 className="text-5xl md:text-6xl font-light text-[#002D62] mb-8 leading-tight">
               {product.name}
             </h1>
             
-            <p className="text-xl text-slate-600 font-light leading-relaxed mb-10 pb-10 border-b border-slate-100">
+            <p className="text-xl text-[#002D62]/75 font-light leading-relaxed mb-10 pb-10 border-b border-[#002D62]/10">
               {product.description}
             </p>
 
             <div className="space-y-8 mb-12">
-              <h3 className="text-xl font-bold text-slate-900 flex items-center gap-3">
-                <FileText size={24} className="text-blue-600" /> Key Uses
-              </h3>
+              <h2 className="text-xl font-bold text-[#002D62] flex items-center gap-3">
+                <FileText size={24} className="text-[#00A4BD]" /> Key Uses
+              </h2>
               <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {product.uses.map((item, i) => (
-                  <li key={i} className="flex items-start gap-3 bg-slate-50 p-4 rounded-xl border border-slate-100">
-                    <CheckCircle2 size={18} className="text-blue-600 shrink-0 mt-0.5" />
-                    <span className="text-slate-700 text-sm font-medium">{item}</span>
+                  <li key={i} className="flex items-start gap-3 bg-white p-4 rounded-xl border border-[#002D62]/10">
+                    <CheckCircle2 size={18} className="text-[#00A4BD] shrink-0 mt-0.5" />
+                    <span className="text-[#002D62] text-sm font-medium">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
             <div className="space-y-5 mb-12">
-              <h3 className="text-xl font-bold text-slate-900 flex items-center gap-3">
-                <Pill size={22} className="text-blue-600" /> Dosage Form
-              </h3>
+              <h2 className="text-xl font-bold text-[#002D62] flex items-center gap-3">
+                <Pill size={22} className="text-[#00A4BD]" /> Dosage Form
+              </h2>
               <div className="flex flex-wrap gap-3">
-                <span className="inline-flex items-center rounded-full bg-slate-50 border border-slate-100 px-4 py-2 text-sm font-semibold text-slate-700">
+                <span className="inline-flex items-center rounded-full bg-white border border-[#002D62]/10 px-4 py-2 text-sm font-semibold text-[#002D62]">
                   {dosageForm}
                 </span>
               </div>
             </div>
 
-            <div className="p-6 rounded-2xl bg-amber-50 border border-amber-100 flex items-start gap-4">
-              <Info className="text-amber-600 shrink-0 mt-0.5" size={20} />
-              <p className="text-xs text-amber-900 font-medium italic leading-relaxed">
+            <div className="p-6 rounded-2xl bg-[#E6EEFF] border border-[#00A4BD]/30 flex items-start gap-4">
+              <Info className="text-[#00A4BD] shrink-0 mt-0.5" size={20} />
+              <p className="text-xs text-[#002D62] font-medium italic leading-relaxed">
                 Caution: {COMPANY_INFO.disclaimer} This information is not intended for the general public.
               </p>
             </div>
@@ -173,7 +173,7 @@ export const ProductDetail: React.FC<{
             <div className="mt-10 flex flex-wrap gap-4">
               <button 
                 onClick={() => setActivePage('contact')}
-                className="bg-blue-600 text-white px-8 py-4 rounded-xl font-bold hover:bg-blue-700 transition-all shadow-xl shadow-blue-600/20 flex items-center gap-3"
+                className="bg-[#002D62] text-white px-8 py-4 rounded-xl font-bold hover:bg-[#FF8C00] hover:text-[#002D62] transition-all shadow-lg flex items-center gap-3"
               >
                 Request Quote / Inquiry <Share2 size={18} />
               </button>
@@ -184,7 +184,7 @@ export const ProductDetail: React.FC<{
 
       {isLightboxOpen && (
         <div
-          className="fixed inset-0 z-50 bg-slate-900/90 backdrop-blur-sm"
+          className="fixed inset-0 z-50 bg-[#0B1A33]/90 backdrop-blur-sm"
           onClick={closeLightbox}
           role="dialog"
           aria-modal="true"
@@ -234,7 +234,7 @@ export const ProductDetail: React.FC<{
               </button>
 
               <div
-                className="max-h-[85vh] w-full max-w-[1200px] h-full flex items-center justify-center"
+                className="max-h-[85vh] w-full max-w-[75rem] h-full flex items-center justify-center"
                 onClick={(event) => event.stopPropagation()}
               >
                 <ImageWithFallback
