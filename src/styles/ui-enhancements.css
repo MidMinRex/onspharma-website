@@ -283,7 +283,7 @@
     min-height: auto;
     flex-direction: column;
     align-items: stretch;
-    padding-top: 7.5rem;
+    padding-top: 6.5rem;
     padding-bottom: 2rem;
   }
 
@@ -294,11 +294,166 @@
   :where(.ui-enhanced) .absolute.bottom-0.left-0.right-0.bg-\[\#F6F3EC\]\/90 {
     position: relative;
     inset: auto;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
   }
 
   :where(.ui-enhanced) .absolute.bottom-0.left-0.right-0.bg-\[\#F6F3EC\]\/90 .flex.flex-wrap.justify-between.items-center.gap-8 {
     justify-content: flex-start;
-    row-gap: 1.25rem;
+    row-gap: 1rem;
+    column-gap: 1rem;
+  }
+
+  :where(.ui-enhanced) {
+    --ui-leading-body: 1.6;
+  }
+
+  :where(.ui-enhanced) p {
+    margin-bottom: 0.7em;
+  }
+
+  :where(.ui-enhanced) p:last-child {
+    margin-bottom: 0;
+  }
+
+  :where(.ui-enhanced) p,
+  :where(.ui-enhanced) a,
+  :where(.ui-enhanced) span,
+  :where(.ui-enhanced) li {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  :where(.ui-enhanced) .flex > * {
+    min-width: 0;
+  }
+
+  :where(.ui-enhanced) .py-24 {
+    padding-top: 4.25rem;
+    padding-bottom: 4.25rem;
+  }
+
+  :where(.ui-enhanced) .py-20 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+
+  :where(.ui-enhanced) .py-10 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  :where(.ui-enhanced) .pt-32 {
+    padding-top: 6rem;
+  }
+
+  :where(.ui-enhanced) .pb-24 {
+    padding-bottom: 4rem;
+  }
+
+  :where(.ui-enhanced) .mb-32 {
+    margin-bottom: 3.5rem;
+  }
+
+  :where(.ui-enhanced) .mb-20 {
+    margin-bottom: 2.5rem;
+  }
+
+  :where(.ui-enhanced) .mb-16 {
+    margin-bottom: 2rem;
+  }
+
+  :where(.ui-enhanced) .mb-12 {
+    margin-bottom: 1.5rem;
+  }
+
+  :where(.ui-enhanced) .mt-16 {
+    margin-top: 2.5rem;
+  }
+
+  :where(.ui-enhanced) .gap-20 {
+    gap: 2.5rem;
+  }
+
+  :where(.ui-enhanced) .gap-16 {
+    gap: 2.5rem;
+  }
+
+  :where(.ui-enhanced) .gap-12 {
+    gap: 2rem;
+  }
+
+  :where(.ui-enhanced) .gap-10 {
+    gap: 1.75rem;
+  }
+
+  :where(.ui-enhanced) .space-y-10 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.75rem;
+  }
+
+  :where(.ui-enhanced) .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.5rem;
+  }
+
+  :where(.ui-enhanced) a[href^="mailto:"],
+  :where(.ui-enhanced) a[href^="tel:"] {
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  :where(.ui-enhanced) footer {
+    padding-top: 3.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.75rem;
+    margin-bottom: 2.5rem;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid > :first-child {
+    grid-column: 1 / -1;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(4) {
+    grid-column: 1 / -1;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(2) ul,
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(3) ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1rem;
+    row-gap: 0.6rem;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(2) ul > :not([hidden]) ~ :not([hidden]),
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(3) ul > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0;
+  }
+
+  :where(.ui-enhanced) footer .container > .grid > :nth-child(4) ul > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.75rem;
+  }
+
+  :where(.ui-enhanced) footer .border-t {
+    padding-top: 1.5rem;
+    gap: 0.75rem;
+  }
+
+  :where(.ui-enhanced) nav {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+  }
+
+  :where(.ui-enhanced) nav img {
+    width: 3.25rem;
+    height: 3.25rem;
+  }
+
+  :where(.ui-enhanced) nav .p-3 {
+    padding: 0.5rem;
   }
 }
