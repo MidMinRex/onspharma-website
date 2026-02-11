@@ -21,10 +21,10 @@ export const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           <MotionSection className="lg:col-span-3">
-            <div className="bg-white p-10 md:p-16 rounded-[2.5rem] shadow-sm border border-[#002D62]/10">
+            <div className="bg-white p-10 md:p-16 rounded-[2.5rem] shadow-sm border border-[#002D62]/10 contact-info-card">
               <h2 className="text-3xl font-bold text-[#002D62] mb-12">Contact Information</h2>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-12 contact-info-grid">
                 {/* Address */}
                 <div className="space-y-6">
                   <div className="flex gap-5">
@@ -81,7 +81,7 @@ export const Contact: React.FC = () => {
               {/* Business Hours */}
               <div className="mt-16 pt-12 border-t border-[#002D62]/10">
                 <h3 className="text-2xl font-bold text-[#002D62] mb-8">Business Hours</h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 contact-hours-grid">
                   <div className="flex justify-between items-center bg-white p-6 rounded-xl border border-[#002D62]/10">
                     <span className="font-semibold text-[#002D62]">Monday - Saturday</span>
                     <span className="text-[#002D62]/75 font-light">09:00 AM - 08:00 PM</span>

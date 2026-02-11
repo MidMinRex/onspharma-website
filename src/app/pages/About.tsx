@@ -155,7 +155,7 @@ export const About: React.FC = () => {
           </div>
         </div>
 
-        <MotionSection className="bg-[#002D62] rounded-[3rem] p-12 md:p-20 text-white overflow-hidden relative">
+        <MotionSection className="bg-[#002D62] rounded-[3rem] p-12 md:p-20 text-white overflow-hidden relative operational-excellence">
   <div className="absolute inset-0 flex justify-end pointer-events-none">
     <div className="w-96 h-96 bg-[#00A4BD]/10 rounded-full blur-[6.25rem] transform translate-x-20 translate-y-[-1.25rem]"></div>
   </div>
